@@ -1,0 +1,4 @@
+# You need to install these python packages.
+# You can use easy_install or pip.
+south
+xlrd
