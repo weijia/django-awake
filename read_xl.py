@@ -219,9 +219,11 @@ def dump_json_fixture(filename, outfilename, appname):
                 colname = colnames[col]
                 if datum == '' or colname == '':
                     continue
-                fmt = '      "{0}": "{1}"'
+                fmt = u'      "{0}": "{1}"'
                 output.append(fmt.format(colname, datum))
-            out.write( ',\n'.join(output))
+            wholeline = u',\n'.join(output)
+            wholeline = wholeline.encode('utf-8')
+            out.write(wholeline)
             out.write( '    }\n')
             more = True
     if more:
